@@ -1,7 +1,8 @@
 const boxes = Array.from(document.getElementsByClassName('box'));
-
+const gameboard = document.getElementById("gameboard");
 const playText = document.getElementById('playText');
-const spaces =[null, null, null, null, null, null, null, null, null];
+const restartBtn = document.getElementById('restart');
+const spaces =[];
 const O_TEXT ="O";
 const X_TEXT = "X";
 let currentPlayer= O_TEXT;
@@ -36,7 +37,7 @@ box.addEventListener('click',boxClicked);
 
 };
 
-const boxClicked= (e)=>
+function boxClicked(e)
 {
    
     const id = e.target.id;
@@ -56,7 +57,7 @@ const boxClicked= (e)=>
 }
 const playerHasWon = () =>
 {
-if(spaces[1]=currentPlayer)
+if(spaces[1]===currentPlayer)
 {
     if(spaces[2]===currentPlayer && spaces[3]===currentPlayer)
     
@@ -75,5 +76,49 @@ if(spaces[1]=currentPlayer)
         return true;
     }
 }
+else if(spaces[9]===currentPlayer)
+{
+    if(spaces[8]===currentPlayer && spaces[7]===currentPlayer)
+    
+    {
+        console.log(`${currentPlayer} wins down`)
+        return true;
+    }
+    if(spaces[3]===currentPlayer && spaces[6]===currentPlayer)
+    {
+        console.log(`${currentPlayer} wins through right`);
+        return true;
+    }
+    
 }
+else if(spaces[5]===currentPlayer)
+{
+    if(spaces[4]===currentPlayer && spaces[6]===currentPlayer)
+    
+    {
+        console.log(`${currentPlayer} wins middle`)
+        return true;
+    }
+    if(spaces[2]===currentPlayer && spaces[8]===currentPlayer)
+    {
+        console.log(`${currentPlayer} wins middle up`);
+        return true;
+    }
+    
+}
+};
+
+
 drawBoard();
+const restart = () => {
+    spaces.forEach((space, index)=>{
+        spaces[index]=null;    
+        });
+        boxes.forEach(box =>{
+            box.innerText='';
+        });
+        playText.innerText= `Let's Play!`;
+        currentPlayer= O_TEXT;
+};
+restartBtn.addEventListener('click',restart);
+restart();
