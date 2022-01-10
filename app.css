@@ -1,6 +1,6 @@
 :root 
 {
-    --colour: #a83264;
+    --colour: #9c288d;
 }
 body 
 {
@@ -61,5 +61,5 @@ button
 button:hover
 {
     cursor: pointer;
-    transform: translateY(-4px);
+    transform: translateY(-5px);
 }

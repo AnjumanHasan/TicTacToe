@@ -49,7 +49,7 @@ function boxClicked(e)
 
         if(playerHasWon(currentPlayer))
         {
-            playText.innerHTML  =  `${currentPlayer} has won!`;
+            playText.innerHTML  =  `${currentPlayer} wins!`;
             return;
         }
         currentPlayer=currentPlayer===O_TEXT? X_TEXT:O_TEXT;
@@ -93,7 +93,7 @@ else if(spaces[9]===currentPlayer)
 }
 else if(spaces[5]===currentPlayer)
 {
-    if(spaces[4]===currentPlayer && spaces[7]===currentPlayer||spaces[3]===currentPlayer && spaces[6]===currentPlayer)
+    if(spaces[4]===currentPlayer && spaces[6]===currentPlayer||spaces[3]===currentPlayer && spaces[7]===currentPlayer)
     
     {
         console.log(`${currentPlayer} wins middle`)
