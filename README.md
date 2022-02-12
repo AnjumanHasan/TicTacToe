@@ -11,7 +11,7 @@ This is a simple webpage I created using basics of web development.
 
 ## View Here
 
-[Tic Tac Toe]()
+[TicTacToe](https://prajesheleven.github.io/TicTacToe/)
 
 ## Author
 
