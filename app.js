@@ -123,3 +123,6 @@ const restart = () => {
 };
 restartBtn.addEventListener('click',restart);
 restart();
+
+year = document.getElementById('year');
+year.innerHTML = new Date().getFullYear();
